@@ -1,0 +1,57 @@
+{
+  "name": "aggregator",
+  "version": "1.0.0",
+  "description": "Super API aggregator app",
+  "scripts": {
+    "start": "./node_modules/webpack/bin/webpack.js",
+    "build": "rimraf dist && NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
+    "serve": "static dist"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.1",
+    "bulma": "^0.1.2",
+    "choo": "^3.1.2",
+    "font-awesome-loader": "^1.0.0",
+    "jquery": "^3.1.0",
+    "lodash": "^4.14.1",
+    "sanitize-html": "^1.13.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel-core": "^6.11.4",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-object-rest-spread": "^6.8.0",
+    "babel-preset-es2040": "^1.1.1",
+    "browser-sync": "^2.14.0",
+    "browser-sync-webpack-plugin": "^1.0.1",
+    "connect-history-api-fallback": "^1.2.0",
+    "connect-logger": "0.0.1",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.23.1",
+    "cz-conventional-changelog": "^1.1.6",
+    "expose-loader": "^0.7.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "font-awesome": "^4.6.3",
+    "html-webpack-plugin": "^2.21.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.8.0",
+    "node-static": "^0.7.7",
+    "postcss-loader": "^0.9.1",
+    "rimraf": "^2.5.2",
+    "sass-loader": "^3.2.1",
+    "standard": "^7.1.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.14.0"
+  },
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE.md",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

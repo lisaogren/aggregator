@@ -5,7 +5,7 @@ module.exports = (item) => {
     <div class="card is-fullwidth">
       <header class="card-header">
         <p class="card-header-title">
-          ${item.full_name}
+          ${item.name}
         </p>
       </header>
       <div class="card-content">
@@ -13,6 +13,14 @@ module.exports = (item) => {
           ${item.description}
         </div>
       </div>
+      <footer class="card-footer">
+        <a href="${item.html_url}" class="card-footer-item" target="_blank">
+          <i class="fa fa-github"></i> View on github
+        </a>
+        <a href="${item.owner.html_url}" class="card-footer-item" target="_blank">
+          <i class="fa fa-user"></i> Published by ${item.owner.login}
+        </a>
+      </footer>
     </div>
   `
 }

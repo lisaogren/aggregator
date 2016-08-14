@@ -9,7 +9,7 @@ Start the webpack dev server:
 
     npm start
 
-Navigate to <http://localhost:1337>.
+Navigate to <http://localhost:3000>.
 
 Any changes you make to your files ( .js, .css, etc.) will trigger a reload.
 

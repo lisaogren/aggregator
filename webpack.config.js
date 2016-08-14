@@ -106,8 +106,7 @@ var production = {
   plugins: [
     new CopyWebpackPlugin([
       { from: 'static/img/', to: 'img/' },
-      { from: 'static/favicon.ico' },
-      { from: 'static/theme/images/', to: 'theme/images/' }
+      { from: 'static/favicon.ico' }
     ]),
     new webpack.optimize.OccurenceOrderPlugin(),
     // extract CSS into a separate file

@@ -7,7 +7,7 @@ module.exports = (state, send) => {
   return html `
     <section class="hero is-primary">
       <div class="hero-head">
-        ${nav()}
+        ${nav(state, send)}
       </div>
 
       <div class="hero-body">

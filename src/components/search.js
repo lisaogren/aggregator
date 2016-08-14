@@ -8,6 +8,7 @@ module.exports = (state, send) => {
     const $el = $(e.currentTarget)
     const query = $el.find('[name=search]').val()
 
+    send('ui:setLoading', true)
     send('repositories:get', { query })
   }
 
@@ -18,7 +19,7 @@ module.exports = (state, send) => {
   }
 
   return html `
-    <form id="search-form" onsubmit=${submit}>
+    <form class="search-form" onsubmit=${submit}>
       <p class="control has-icon">
         <input class="input is-medium" type="search" name="search" value="${state.ui.search.input}" onchange=${onChange} placeholder="What do you wanna search for?!" autocomplete="off" />
         <i class="fa fa-search"></i>

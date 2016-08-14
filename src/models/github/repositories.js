@@ -8,11 +8,14 @@ module.exports = {
   effects: {
     get: (data, state, send, done) => {
       api.github.search({ query: data.query })
-        .then(({ res, body }) => send('repositories:add', body, done))
+        .then(({ res, body }) => {
+          send('repositories:set', body, done)
+          send('ui:setLoading', false)
+        })
         .catch(({ err, res }) => done(err, res))
     }
   },
   reducers: {
-    add: (data, state) => ({ items: data.items })
+    set: (data, state) => ({ items: data.items })
   }
 }

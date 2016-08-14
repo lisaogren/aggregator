@@ -1,6 +1,12 @@
 const html = require('choo/html')
 
-module.exports = () => {
+module.exports = (state, send) => {
+  const toggleNav = (e) => {
+    send('ui:toggleNav')
+  }
+
+  const isActive = state.ui.nav.isActive ? 'is-active' : ''
+
   return html `
     <header class="nav">
       <div class="container">
@@ -9,12 +15,12 @@ module.exports = () => {
             Aggregator
           </a>
         </div>
-        <span class="nav-toggle">
+        <span class="nav-toggle ${isActive}" onclick=${toggleNav}>
           <span></span>
           <span></span>
           <span></span>
         </span>
-        <div class="nav-right nav-menu">
+        <div class="nav-right nav-menu ${isActive}">
           <a href="/" class="nav-item is-active">
             Home
           </a>
@@ -22,11 +28,11 @@ module.exports = () => {
             About
           </a>
           <span class="nav-item">
-            <a class="button is-primary is-inverted">
+            <a href="https://github.com/RasCarlito/aggregator" class="button is-primary is-inverted" target="_blank">
               <span class="icon">
                 <i class="fa fa-github"></i>
               </span>
-              <span>Fork on github</span>
+              <span>fork on github</span>
             </a>
           </span>
         </div>

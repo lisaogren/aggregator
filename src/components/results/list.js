@@ -8,11 +8,12 @@ module.exports = (state, prev, send) => {
   const { items } = state.repositories
 
   let content
+  let { isLoading } = state.ui.results
 
-  if (items.length) {
-    content = items.map(data => item(data))
-  } else if (state.ui.results.isLoading) {
+  if (isLoading) {
     content = loader()
+  } else if (items.length) {
+    content = items.map(data => item(data))
   } else {
     content = empty()
   }

@@ -8,7 +8,6 @@ module.exports = (state, send) => {
     const $el = $(e.currentTarget)
     const query = $el.find('[name=search]').val()
 
-    send('ui:setLoading', true)
     send('repositories:get', { query })
   }
 

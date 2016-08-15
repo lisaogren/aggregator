@@ -7,10 +7,12 @@ module.exports = {
   },
   effects: {
     get: (data, state, send, done) => {
+      send('ui:setLoading', true, done)
+
       api.github.search({ query: data.query })
         .then(({ res, body }) => {
+          send('ui:setLoading', false, done)
           send('repositories:set', body, done)
-          send('ui:setLoading', false)
         })
         .catch(({ err, res }) => done(err, res))
     }

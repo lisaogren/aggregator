@@ -4,6 +4,8 @@
 Search all the API's on the web (google, github, gitlab, youtube, deezer, etc).
 Only implements github repository search for now.
 
+Demo: https://ns-ceggwivfji.now.sh
+
 ![http://i.imgur.com/9pinj3v.jpg](http://i.imgur.com/9pinj3v.jpg)
 
 ## Development

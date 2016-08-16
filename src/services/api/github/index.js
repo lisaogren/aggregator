@@ -9,6 +9,8 @@ const config = {
   },
   api: {
     search: {
+      // type === repositories|code|...
+      // path: '/search/:type',
       path: '/search/repositories',
       params: {
         q: null,
@@ -22,12 +24,7 @@ const config = {
 
 const request = {
   build (options) {
-    options = options || {}
-
-    const path = this.path(options)
-    const params = this.params(options)
-
-    return `${path}${params}`
+    return `${this.path(options)}${this.params(options)}`
   },
 
   path (options) {
@@ -36,11 +33,12 @@ const request = {
 
   params (options) {
     const definition = config.api[options.name]
-
-    return '?' + _.map(
+    const params = _.map(
       _.extend({}, definition.params, options.params),
       (param, key) => `${key}=${param}`
     ).join('&')
+
+    return params ? `?${params}` : ''
   }
 }
 

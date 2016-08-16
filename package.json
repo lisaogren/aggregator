@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "Super API aggregator app",
   "scripts": {
-    "start": "./node_modules/webpack/bin/webpack.js",
     "build": "rimraf dist && NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
-    "serve": "static dist"
+    "start": "http-server ./dist -d",
+    "dev": "./node_modules/webpack/bin/webpack.js"
   },
   "dependencies": {
     "bluebird": "^3.4.1",
     "bulma": "^0.1.2",
     "choo": "^3.1.2",
     "font-awesome-loader": "^1.0.0",
+    "http-server": "^0.9.0",
     "jquery": "^3.1.0",
     "lodash": "^4.14.1",
     "sanitize-html": "^1.13.0"

@@ -12,7 +12,7 @@ Aggregator uses [choo](https://github.com/yoshuawuyts/choo) and [bulma](http://b
 
 Start the webpack dev server:
 
-    npm start
+    npm run dev
 
 Navigate to <http://localhost:3000>.
 
@@ -32,3 +32,7 @@ This will create a `dist` folder:
         ├── 5df766af1ced8ff1fe0a.css
         ├── 5df766af1ced8ff1fe0a.js
         └── ...
+
+You can serve the dist folder statically using `http-server`:
+
+    npm start

@@ -1,9 +1,14 @@
 
 # Aggregator
 
-Search all the API's on the web (google, github, gitlab, youtube, deezer, etc)
+Search all the API's on the web (google, github, gitlab, youtube, deezer, etc).
+Only implements github repository search for now.
+
+![http://i.imgur.com/9pinj3v.jpg](http://i.imgur.com/9pinj3v.jpg)
 
 ## Development
+
+Aggregator uses [choo](https://github.com/yoshuawuyts/choo) and [bulma](http://bulma.io)
 
 Start the webpack dev server:
 

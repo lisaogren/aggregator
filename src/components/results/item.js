@@ -18,7 +18,7 @@ module.exports = (item) => {
           <i class="fa fa-github"></i> View on github
         </a>
         <a href="${item.owner.html_url}" class="card-footer-item" target="_blank">
-          <i class="fa fa-user"></i> Published by ${item.owner.login}
+          <i class="fa fa-user"></i> ${item.owner.login}
         </a>
       </footer>
     </div>

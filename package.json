@@ -5,12 +5,15 @@
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
     "start": "http-server ./dist -d",
-    "dev": "./node_modules/webpack/bin/webpack.js"
+    "dev": "./node_modules/webpack/bin/webpack.js",
+    "app:start": "PLATFORM=electron npm run build && electron ./electron",
+    "app:build": "electron-packager ./electron --out=electron/dist --app-version=$npm_package_version --prune --asar --overwrite --all"
   },
   "dependencies": {
     "bluebird": "^3.4.1",
     "bulma": "^0.1.2",
     "choo": "^3.1.2",
+    "electron-debug": "^1.0.0",
     "font-awesome-loader": "^1.0.0",
     "http-server": "^0.9.0",
     "jquery": "^3.1.0",
@@ -30,6 +33,9 @@
     "copy-webpack-plugin": "^3.0.1",
     "css-loader": "^0.23.1",
     "cz-conventional-changelog": "^1.1.6",
+    "devtron": "^1.1.0",
+    "electron-packager": "^7.0.0",
+    "electron": "^1.0.1",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",

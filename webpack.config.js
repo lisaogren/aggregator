@@ -10,12 +10,15 @@ var historyApiFallback = require('connect-history-api-fallback')
 
 // detemine build env
 var TARGET_ENV = process.env.NODE_ENV || 'development'
+var TARGET_PLATFORM = process.env.PLATFORM || 'web'
+
+console.log('[ Webpack ] Targets... env=' + TARGET_ENV + ', platform=' + TARGET_PLATFORM)
 
 // common webpack config
 var common = {
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    filename: '/[hash].js'
+    filename: (TARGET_PLATFORM === 'web' ? '/' : './') + '[hash].js'
   },
   resolve: {
     modulesDirectories: ['node_modules'],
@@ -125,9 +128,9 @@ var production = {
 }
 
 if (TARGET_ENV === 'development') {
-  console.log('Booting development server...')
+  console.log('[ Webpack ] Booting development server...')
   module.exports = merge(common, development)
 } else if (TARGET_ENV === 'production') {
-  console.log('Building production /dist folder...')
+  console.log('[ Webpack ] Building production /dist folder...')
   module.exports = merge(common, production)
 }

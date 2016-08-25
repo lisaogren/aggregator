@@ -13,6 +13,7 @@
     "bluebird": "^3.4.1",
     "bulma": "^0.1.2",
     "choo": "^3.1.2",
+    "choo-log": "^1.4.0",
     "electron-debug": "^1.0.0",
     "font-awesome-loader": "^1.0.0",
     "http-server": "^0.9.0",

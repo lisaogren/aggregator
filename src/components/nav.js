@@ -1,4 +1,5 @@
 const html = require('choo/html')
+const route = require('../utils/route')
 
 module.exports = (state, send) => {
   const toggleNav = (e) => {
@@ -21,10 +22,10 @@ module.exports = (state, send) => {
           <span></span>
         </span>
         <div class="nav-right nav-menu ${isActive}">
-          <a href="/" class="nav-item is-active">
+          <a href="/" class="nav-item ${isCurrent('main')}">
             Home
           </a>
-          <a href="/about" class="nav-item">
+          <a href="/about" class="nav-item ${isCurrent('about')}">
             About
           </a>
           <span class="nav-item">
@@ -39,4 +40,8 @@ module.exports = (state, send) => {
       </div>
     </header>
   `
+
+  function isCurrent (name) {
+    return route.isCurrent(name) ? 'is-active' : ''
+  }
 }

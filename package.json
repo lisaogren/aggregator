@@ -5,7 +5,7 @@
   "scripts": {
     "build": "rimraf dist && NODE_ENV=production ./node_modules/webpack/bin/webpack.js",
     "start": "http-server ./dist -d",
-    "dev": "./node_modules/webpack/bin/webpack.js",
+    "dev": "webpack-dashboard -- ./node_modules/webpack/bin/webpack.js",
     "app:start": "PLATFORM=electron npm run build && electron ./electron",
     "app:build": "electron-packager ./electron --out=electron/dist --app-version=$npm_package_version --prune --asar --overwrite --all"
   },
@@ -36,8 +36,8 @@
     "css-loader": "^0.23.1",
     "cz-conventional-changelog": "^1.1.6",
     "devtron": "^1.1.0",
-    "electron-packager": "^7.0.0",
     "electron": "^1.0.1",
+    "electron-packager": "^7.0.0",
     "expose-loader": "^0.7.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
@@ -53,6 +53,7 @@
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
+    "webpack-dashboard": "^0.1.8",
     "webpack-dev-server": "^1.14.1",
     "webpack-merge": "^0.14.0"
   },

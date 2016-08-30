@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const merge = require('lodash/merge')
 const http = require('choo/http')
 const Promise = require('bluebird')
 const url = require('url-composer')
@@ -22,7 +22,7 @@ const config = {
   },
 
   get (name, options) {
-    return _.merge({ host: this.host }, this.api[name], options)
+    return merge({ host: this.host }, this.api[name], options)
   }
 }
 

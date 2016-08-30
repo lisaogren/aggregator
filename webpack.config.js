@@ -7,6 +7,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var CopyWebpackPlugin = require('copy-webpack-plugin')
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 var historyApiFallback = require('connect-history-api-fallback')
+var DashboardPlugin = require('webpack-dashboard/plugin')
 
 // detemine build env
 var TARGET_ENV = process.env.NODE_ENV || 'development'
@@ -83,7 +84,8 @@ var development = {
       bsFiles: { src: ['static', 'dist', 'src'] },
       middleware: [require('connect-logger')(), historyApiFallback()]
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new DashboardPlugin()
   ],
 
   watch: true,

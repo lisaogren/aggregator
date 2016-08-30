@@ -1,18 +1,16 @@
-const $ = require('jquery')
 const html = require('choo/html')
 
 module.exports = (state, send) => {
   const submit = (e) => {
     e.preventDefault()
 
-    const $el = $(e.currentTarget)
-    const query = $el.find('[name=search]').val()
+    const query = document.querySelector('.search-form [name=search]').value
 
     send('repositories:get', { query })
   }
 
   const onChange = (e) => {
-    const search = $(e.currentTarget).val()
+    const search = e.currentTarget.value
 
     send('ui:searchInput', { search })
   }

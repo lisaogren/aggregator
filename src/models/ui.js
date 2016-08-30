@@ -1,4 +1,4 @@
-const _ = require('lodash')
+const extend = require('lodash/extend')
 
 module.exports = {
   namespace: 'ui',
@@ -25,7 +25,7 @@ module.exports = {
     }),
 
     setLoading: (isLoading, state) => ({
-      results: _.extend(state.results, { isLoading })
+      results: extend(state.results, { isLoading })
     }),
 
     setError: (errorMsg, state) => {
@@ -35,7 +35,7 @@ module.exports = {
         data = { hasError: true, errorMsg }
       }
 
-      return { results: _.extend(state.results, data) }
+      return { results: extend(state.results, data) }
     }
   }
 }
